@@ -1,0 +1,450 @@
+/*
+ * Global Styles (Updated)
+ * Optimized for mobile-first design.
+ * Light/Dark theme supported via `.dark` on <body>.
+ */
+
+/* ---------- Root Theme Variables ---------- */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #222222;
+    --accent-color: #007acc;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #00bcd4;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Global Resets ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Layout Container ---------- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ---------- Header and Navigation ---------- */
+header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    padding: 0.3rem 0.5rem;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-link:focus {
+    color: var(--accent-color);
+    outline: none;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+    transform: rotate(20deg);
+}
+
+/* ---------- Section Defaults ---------- */
+.section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.hero-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.hero-text h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* ---------- Projects Section ---------- */
+.projects-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+}
+
+.projects-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.projects-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.project-card {
+    flex: 0 0 260px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-img img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1rem;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+/* ---------- Certifications Section ---------- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-4px);
+}
+
+.cert-icon {
+    font-size: 2.3rem;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.cert-item h3 {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+}
+
+/* ---------- Skills Section ---------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+}
+
+.skill {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-4px);
+}
+
+.skill-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.skill h3 {
+    font-size: 1rem;
+}
+
+/* ---------- Experience & Education ---------- */
+.education-list,
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experience-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    padding: 1.2rem;
+}
+
+.experience-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.experience-icon {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.experience-item .period {
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- Contact Section ---------- */
+.contact-section p {
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+}
+
+.contact-section a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* ---------- LinkedIn Section ---------- */
+.linkedin-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.linkedin-card {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    max-width: 480px;
+    width: 100%;
+}
+
+.linkedin-card h2 {
+    font-size: 1.6rem;
+    color: #0077b5;
+    margin-bottom: 12px;
+}
+
+.linkedin-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 18px;
+}
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #0077b5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.linkedin-button:hover,
+.linkedin-button:focus {
+    background-color: #005f87;
+}
+
+/* ---------- Decorative Shapes ---------- */
+.decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(50px);
+    animation: float 10s ease-in-out infinite;
+}
+
+.shape1 {
+    background: radial-gradient(circle at 30% 30%, var(--accent-color), transparent);
+    top: -60px;
+    left: -80px;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    background: radial-gradient(circle at 70% 70%, #ff6b6b, transparent);
+    top: 100px;
+    right: -120px;
+    animation-delay: 3s;
+}
+
+.shape3 {
+    background: radial-gradient(circle at 50% 50%, #facc15, transparent);
+    bottom: -80px;
+    left: 20%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
+/* ---------- Entrance Animations ---------- */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--card-bg);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    box-shadow: 0 -2px 4px var(--card-shadow);
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+    .project-card {
+        flex: 0 0 80%;
+    }
+}
