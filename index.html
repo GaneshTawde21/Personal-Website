@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky header with navigation -->
+    <header class="sticky">
+        <nav class="nav container">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#intro" class="nav-link active">Home</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#linkedin" class="nav-link">LinkedIn</a></li>
+            </ul>
+            <!-- Dark mode toggle button -->
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="section hero">
+            <div class="hero-container container">
+                <div class="hero-image hidden">
+                    <!-- Profile picture -->
+                    <img src="images/profile.jpeg" alt="Ganesh Tawde" />
+                </div>
+                <div class="hero-text hidden">
+                    <h1>Ganesh Tawde</h1>
+                    <p>Data analytics and software engineering professional based in London. I specialise in automation, intelligent software solutions, and machine learning models that drive impactful, data-informed decisions.</p>
+                    <p>Explore my journey, projects and accomplishments below.</p>
+                </div>
+            </div>
+            <!-- Decorative animated shapes in the hero background -->
+            <div class="decorations">
+                <span class="shape shape1"></span>
+                <span class="shape shape2"></span>
+                <span class="shape shape3"></span>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education-list">
+                    <div class="education-item hidden">
+                        <h3>Master of Science in Data Analytics</h3>
+                        <p>Queen Mary University of London — Distinction</p>
+                    </div>
+                    <div class="education-item hidden">
+                        <h3>Diploma in Data Science</h3>
+                        <p>Indian Institute of Technology Madras — Merit</p>
+                    </div>
+                    <div class="education-item hidden">
+                        <h3>Bachelor of Engineering in Information Technology</h3>
+                        <p>University of Mumbai — Distinction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item hidden">
+                        <h3>Operations – Team Leader <span>atis, London, UK</span></h3>
+                        <p class="period">Apr&nbsp;2025 – Present</p>
+                        <ul>
+                            <li>Implemented agentic workflows using n8n to automate sales ingestion, KPI calculation, and reporting pipelines, reducing manual operational work by 65 percent.</li>
+                            <li>Developed Python- and Excel-based data pipelines to clean, structure, and analyse POS data, identifying pricing and product bundling opportunities that increased average basket value by 14 percent.</li>
+                            <li>Created Tableau dashboards tracking conversion rate, peak trading periods, and SKU performance to support data-driven promotional and staffing decisions.</li>
+                            <li>Performed campaign and collaboration analysis for marketing initiatives, assessing ROI and performance to determine which partnerships and promotions to scale.</li>
+                            <li>Delivered concise analytical insights to senior stakeholders, enabling faster decision-making across product launches, promotions, and operational planning.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item hidden">
+                        <h3>Operations – Team Leader <span>GAIL’s, London, UK</span></h3>
+                        <p class="period">Feb&nbsp;2024 – Mar&nbsp;2025</p>
+                        <ul>
+                            <li>Designed automation-driven process improvements that replaced manual tracking with structured, repeatable analytical workflows, reducing reporting effort by 45 percent.</li>
+                            <li>Built performance analysis frameworks to monitor store-level variability, demand patterns, and operational trends, improving prioritisation of improvement areas.</li>
+                            <li>Defined and tracked KPIs, enabling leadership to monitor performance trends and focus improvement efforts.</li>
+                            <li>Produced standardized KPI dashboards consolidating sales, trend analysis, and operational signals for weekly leadership review.</li>
+                            <li>Applied data analysis techniques to identify inefficiencies and performance gaps, contributing to measurable improvements in operational consistency.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item hidden">
+                        <h3>Software Engineer <span>Tata Consultancy Services Limited, Mumbai, IN</span></h3>
+                        <p class="period">Oct&nbsp;2021 – Aug&nbsp;2023</p>
+                        <ul>
+                            <li>Developed and enhanced core services for State Bank of India’s internal digital banking platform, supporting customer onboarding, account access, and financial reporting.</li>
+                            <li>Designed and implemented Python- and SQL-based services for authentication workflows, balance retrieval, and statement generation.</li>
+                            <li>Built and maintained ETL pipelines to ingest, validate, and transform customer and transactional data across banking systems.</li>
+                            <li>Translated business and regulatory requirements into technical deliverables, coordinating with QA and UAT teams using JIRA and Confluence.</li>
+                            <li>Supported release activities across UAT and Production environments, including deployment coordination and post-release validation through CI/CD pipelines.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item hidden">
+                        <h3>Assistant Software Engineer <span>Tata Consultancy Services Limited, Mumbai, IN</span></h3>
+                        <p class="period">Mar&nbsp;2021 – Sep&nbsp;2021</p>
+                        <ul>
+                            <li>Developed application modules for State Bank of India’s internal banking systems using Python, SQL, HTML, CSS, and JavaScript.</li>
+                            <li>Implemented API-driven components supporting customer onboarding, KYC authentication, and document verification.</li>
+                            <li>Developed SQL queries and backend logic for account summaries, transaction views, and internal reports.</li>
+                            <li>Participated in testing cycles and UAT support, resolving defects prior to production releases.</li>
+                            <li>Delivered sprint-based development tasks within Agile workflows, contributing production-ready code to shared repositories.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-carousel">
+                    <!-- Project 1: Outfit Recommender System -->
+                    <div class="project-card hidden">
+                        <div class="project-img">
+                            <img src="images/project1.jpg" alt="Outfit Recommender" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Outfit Recommender System for Men's Fashion</h3>
+                            <p>Personalised outfit recommendations using CNNs and colour clustering.</p>
+                        </div>
+                        <div class="project-overlay">
+                            <p>Used ResNet50 to extract image features and applied k‑means clustering for colour analysis. Cosine similarity was used to suggest complementary outfits. Delivered as a Flask web app.</p>
+                        </div>
+                    </div>
+                    <!-- Project 2: Financial Sentiment Analysis -->
+                    <div class="project-card hidden">
+                        <div class="project-img">
+                            <img src="images/project2.jpg" alt="Financial Sentiment Analysis" />
+                        </div>
+                        <div class="project-info">
+                            <h3>NLP Project for Financial Sentiment Analysis</h3>
+                            <p>NLP model for classifying market news sentiments.</p>
+                        </div>
+                        <div class="project-overlay">
+                            <p>Pre‑processed large news datasets with tokenisation and lemmatisation and fine‑tuned a BERT model to classify sentiments as positive, neutral or negative, achieving 87% accuracy.</p>
+                        </div>
+                    </div>
+                    <!-- Project 3: Market Data Pipeline -->
+                    <div class="project-card hidden">
+                        <div class="project-img">
+                            <img src="images/project3.jpg" alt="Market Data Pipeline" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Financial Market Data Pipeline Optimization</h3>
+                            <p>Real‑time ETL for macro and sectoral market data.</p>
+                        </div>
+                        <div class="project-overlay">
+                            <p>Automated extraction from APIs and databases, cleaned and transformed data, and integrated it into a central system for efficient storage and retrieval, reducing data latency by 30%.</p>
+                        </div>
+                    </div>
+                    <!-- Project 4: DiabetesInsight -->
+                    <div class="project-card hidden">
+                        <div class="project-img">
+                            <img src="images/project4.jpg" alt="DiabetesInsight" />
+                        </div>
+                        <div class="project-info">
+                            <h3>DiabetesInsight: AI Early Diabetes Detection</h3>
+                            <p>AI‑powered early diabetes risk prediction system.</p>
+                        </div>
+                        <div class="project-overlay">
+                            <p>Combined Random Forests, Gradient Boosting Machines and Logistic Regression to build an ensemble model with 89% accuracy. Engineered features from electronic health records, wearables and dietary data.</p>
+                        </div>
+                    </div>
+                    <!-- Project 5: HemoTrack -->
+                    <div class="project-card hidden">
+                        <div class="project-img">
+                            <img src="images/project5.jpg" alt="HemoTrack" />
+                        </div>
+                        <div class="project-info">
+                            <h3>HemoTrack: Integrated Blood Transfusion Data Platform</h3>
+                            <p>Integrated blood transfusion data platform.</p>
+                        </div>
+                        <div class="project-overlay">
+                            <p>Designed a modular platform integrating transfusion records, lab results and clinical data from multiple databases. Created a full patient timeline for research using SQL views and temporal joins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2>Certifications</h2>
+                <div class="cert-grid">
+                    <!-- Each certification card is now a link directly to the certificate verification page -->
+                    <a href="https://app.onlinedegree.iitm.ac.in/document_verification/0e5cd4bc21bb8606d4dca044cb03c2d574bb87e964e515ba728ccb175c8c2762" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">🎓</span>
+                        <h3>Diploma in Data Science (IIT Madras)</h3>
+                    </a>
+                    <a href="https://app.onlinedegree.iitm.ac.in/document_verification/61e0ba63dd63e661446750bb41a79799493e82b225a4004721a2587cc1010aaf" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">🧑‍💻</span>
+                        <h3>Programming & Data Science (IIT Madras)</h3>
+                    </a>
+                    <a href="https://portal.bloombergforeducation.com/certificates/J3y5WaawyzWc4KXTtF1Nmj2Q" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">📈</span>
+                        <h3>Finance Fundamentals (Bloomberg)</h3>
+                    </a>
+                    <a href="https://portal.bloombergforeducation.com/certificates/WxfXV2k34KWffPUYsmBkrDYg" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">💹</span>
+                        <h3>Market Concepts (Bloomberg)</h3>
+                    </a>
+                    <a href="https://portal.bloombergforeducation.com/certificates/bT8V39kp7Rp6zrpMwYu3tAk2" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">🌿</span>
+                        <h3>ESG (Bloomberg)</h3>
+                    </a>
+                    <a href="https://www.cloudskillsboost.google/public_profiles/6321e791-2135-4f6c-b54c-3db1f31644fe/badges/8186415?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">🤖</span>
+                        <h3>Responsible AI (Google Cloud)</h3>
+                    </a>
+                    <a href="https://www.credly.com/badges/6597c0bf-ff0f-4d44-8c87-7ab3aa4f3abf/linked_in_profile" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">🏅</span>
+                        <h3>Digital Badge Volunteer (DIG)</h3>
+                    </a>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/8Z7JQECKUV9E" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">☁️</span>
+                        <h3>Data Engineering on GCP (Coursera)</h3>
+                    </a>
+                    <a href="https://www.youracclaim.com/badges/3acd22eb-6bd9-4adb-b395-9dc495c55e31/linked_in_profile" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">📊</span>
+                        <h3>Tableau Author (Tableau)</h3>
+                    </a>
+                    <a href="http://coursera.org/verify/G2SH4FTSYLGN" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">➗</span>
+                        <h3>Data Science Math (Duke University)</h3>
+                    </a>
+                    <a href="http://coursera.org/verify/DV45SHQJZ2L4" target="_blank" class="cert-item hidden">
+                        <span class="cert-icon">👥</span>
+                        <h3>Personal Branding (University of Virginia)</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LinkedIn Section -->
+
+        <section id="linkedin" class="section linkedin-section">
+            <div class="container linkedin-card">
+                <h2><i class="fab fa-linkedin"></i> Connect with Me on LinkedIn</h2>
+                <p class="hidden">Stay updated with my professional journey, articles, and insights by visiting my profile.
+                </p>
+                <p class="hidden">
+                    <a class="linkedin-button" href="https://www.linkedin.com/in/ganesh-tawde-98777a168/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> Visit my LinkedIn Profile
+                    </a>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill hidden">
+                        <span class="skill-icon">🐍</span>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">🗄️</span>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">📜</span>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">☕</span>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">📊</span>
+                        <h3>R</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">🤖</span>
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">📈</span>
+                        <h3>Tableau &amp; Power BI</h3>
+                    </div>
+                    <div class="skill hidden">
+                        <span class="skill-icon">☁️</span>
+                        <h3>GCP &amp; BigQuery</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p class="hidden">London, UK</p>
+                <p class="hidden">Phone: <a href="tel:+447767551250">(+44) 7767 551250</a></p>
+                <p class="hidden">Email: <a href="mailto:ganesh.tawde03@gmail.com">ganesh.tawde03@gmail.com</a></p>
+                <p class="hidden"><a href="GaneshTawdeCV.pdf" download>Download CV</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/ganesh-tawde-98777a168/" target="_blank">LinkedIn</a></p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ganesh Tawde. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External script file -->
+    <script src="script.js"></script>
+</body>
+</html>
