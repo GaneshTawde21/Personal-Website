@@ -1,0 +1,562 @@
+/*
+ * Global Styles
+ * This stylesheet defines the visual appearance of the personal portfolio.
+ * It uses CSS variables for easy theming and supports a dark mode which
+ * can be toggled via JavaScript by adding a `.dark` class to the body.
+ */
+
+/* Root variables for light theme */
+
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #222222;
+    --accent-color: #007acc;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --bar-bg: #e0e0e0;
+    --bar-fill: #007acc;
+}
+
+/* Dark theme overrides */
+body.dark {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #00bcd4;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --bar-bg: #333333;
+    --bar-fill: #00bcd4;
+}
+
+/* Global resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header and Navigation */
+header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    padding: 0.3rem 0.5rem;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+/* Sections */
+.section {
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Adjust layout on larger screens */
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.hero-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* Projects Section */
+.projects-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+}
+
+.projects-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.projects-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.project-card {
+    flex: 0 0 280px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.project-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1rem;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Certifications Section */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.cert-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cert-item:hover {
+    transform: translateY(-5px);
+}
+
+.cert-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.cert-item h3 {
+    font-size: 1rem;
+    color: var(--accent-color);
+}
+
+/* Emoji icons for certifications */
+.cert-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+    padding: 1rem;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.lightbox-caption {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual skill card styling */
+.skill {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    display: block;
+}
+
+.skill h3 {
+    margin-bottom: 0;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Entrance animations */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 4px var(--card-shadow);
+}
+
+/* Education & Experience Lists */
+.education-list,
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.education-item h3,
+.experience-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--accent-color);
+}
+
+.education-item p,
+.experience-item p {
+    margin-left: 0.5rem;
+}
+
+/* Additional span inside experience headings (e.g., company location) */
+.experience-item h3 span:not(.experience-icon) {
+    color: var(--text-color);
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+/* Modern card style for experience items */
+.experience-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Align heading and icon for experience */
+.experience-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    display: inline-block;
+}
+
+.experience-item .period {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.experience-item ul {
+    list-style: disc inside;
+    margin-left: 1rem;
+    line-height: 1.4;
+}
+
+/* Contact Section */
+.contact-section p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.contact-section a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* LinkedIn Section */
+.linkedin-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.linkedin-card {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    width: 100%;
+}
+
+.linkedin-card h2 {
+    font-size: 1.8rem;
+    color: #0077b5;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.linkedin-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0077b5;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.linkedin-button:hover {
+    background-color: #005f87;
+    box-shadow: 0 4px 12px rgba(0, 118, 181, 0.4);
+}
+
+.linkedin-button i {
+    font-size: 1.2rem;
+}
+
+
+/* Decorative shapes in hero */
+.decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(60px);
+    animation: float 12s ease-in-out infinite;
+}
+
+.shape1 {
+    background: radial-gradient(circle at 30% 30%, var(--accent-color), transparent);
+    top: -80px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    background: radial-gradient(circle at 70% 70%, #ff6b6b, transparent);
+    top: 120px;
+    right: -150px;
+    animation-delay: 3s;
+}
+
+.shape3 {
+    background: radial-gradient(circle at 50% 50%, #facc15, transparent);
+    bottom: -100px;
+    left: 20%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(30px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive text sizing */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
